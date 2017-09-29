@@ -22,29 +22,29 @@ namespace BlogSample
             Console.WriteLine("Title of updated first post:");
             Console.WriteLine(updatedPost.Title);
             Console.WriteLine("\n");
-
-
+            
             var commentOwnersFromChosenPost = blogManager.GetCommentsOwnersFromPost(1).Result;
             Console.WriteLine("Comment owners: ");
             commentOwnersFromChosenPost.ForEach(o => Console.WriteLine(o));
             Console.WriteLine("\n");
 
-            Post postToAdd = new Post
-            {
-                Title = "Refit usage",
-                Body = "Refit allow you to really quickly create client libraries for Web APIs"
-            };
-            var postAdded = blogManager.AddPost(postToAdd).Result;
+            var postAdded = blogManager.AddPost(GeneratePost()).Result;
             Console.WriteLine("Title of added post:");
             Console.WriteLine(postAdded.Title);
             Console.WriteLine("Body of added post:");
             Console.WriteLine(postAdded.Body);
-
             Console.WriteLine("\n");
 
-
-
             Console.ReadKey();
+        }
+
+        private static Post GeneratePost()
+        {
+            return new Post
+            {
+                Title = "Refit usage",
+                Body = "Refit allow you to really quickly create client libraries for Web APIs"
+            };
         }
     }
 }
