@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BlogSample.Services;
+using System;
 
 namespace BlogSample
 {
@@ -6,29 +7,29 @@ namespace BlogSample
     {
         static void Main(string[] args)
         {
-            BlogManager.BlogManager blogManager = new BlogManager.BlogManager();
-            var post = blogManager.GetPost(1).Result;
+            BlogService blogService = new BlogService();
+            var post = blogService.GetPost(1).Result;
             Console.WriteLine("Title of first post:");
             Console.WriteLine(post.Title);
             Console.WriteLine("\n");
 
-            var numberOfPosts = blogManager.GetNumberOfPosts().Result;
+            var numberOfPosts = blogService.GetNumberOfPosts().Result;
             Console.WriteLine("Number of all posts:");
             Console.WriteLine(numberOfPosts);
             Console.WriteLine("\n");
 
 
-            var updatedPost = blogManager.ChangeTitle(1, "NEW_TITLE").Result;
+            var updatedPost = blogService.ChangeTitle(1, "NEW_TITLE").Result;
             Console.WriteLine("Title of updated first post:");
             Console.WriteLine(updatedPost.Title);
             Console.WriteLine("\n");
             
-            var commentOwnersFromChosenPost = blogManager.GetCommentsOwnersFromPost(1).Result;
+            var commentOwnersFromChosenPost = blogService.GetCommentsOwnersFromPost(1).Result;
             Console.WriteLine("Comment owners: ");
             commentOwnersFromChosenPost.ForEach(o => Console.WriteLine(o));
             Console.WriteLine("\n");
 
-            var postAdded = blogManager.AddPost(GeneratePost()).Result;
+            var postAdded = blogService.AddPost(GeneratePost()).Result;
             Console.WriteLine("Title of added post:");
             Console.WriteLine(postAdded.Title);
             Console.WriteLine("Body of added post:");

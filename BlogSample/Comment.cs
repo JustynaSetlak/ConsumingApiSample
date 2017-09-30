@@ -7,7 +7,6 @@ namespace BlogSample
 {
     public class Comment
     {
-        [JsonProperty(PropertyName = "id")]
         public int Id { get; set; }
 
         [JsonProperty(PropertyName = "email")]
@@ -16,7 +15,6 @@ namespace BlogSample
         [JsonProperty(PropertyName = "name")]
         public string Title { get; set; }
 
-        [JsonProperty(PropertyName = "body")]
         public string Body { get; set; }
     }
 }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BlogSample.BlogManager.Interfaces
+namespace BlogSample.Services.Interfaces
 {
     public interface IBlogApi
     {

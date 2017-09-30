@@ -1,18 +1,18 @@
-﻿using BlogSample.BlogManager.Interfaces;
+﻿using BlogSample.Services.Interfaces;
 using Refit;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BlogSample.BlogManager
+namespace BlogSample.Services
 {
-    public class BlogManager
+    public class BlogService
     {
         private readonly string _apiAddress = "https://jsonplaceholder.typicode.com";
         private readonly IBlogApi _blogApi;
 
-        public BlogManager()
+        public BlogService()
         {
             _blogApi = RestService.For<IBlogApi>(_apiAddress);
         }
