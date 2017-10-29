@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GithubSample
+namespace GithubSample.Models
 {
     public class Commit
     {

@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using GithubSample.Models;
+using GithubSample.Services.Interfaces;
 using Refit;
 
-namespace GithubSample
+namespace GithubSample.Services
 {
     public class GithubService
     {

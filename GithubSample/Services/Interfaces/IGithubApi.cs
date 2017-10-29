@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using GithubSample.Models;
 using Refit;
 
-namespace GithubSample
+namespace GithubSample.Services.Interfaces
 {
     [Headers("User-Agent: Test App")]
     public interface IGithubApi

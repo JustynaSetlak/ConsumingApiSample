@@ -1,4 +1,4 @@
-﻿namespace GithubSample
+﻿namespace GithubSample.Models
 {
     public class Repository
     {
@@ -8,7 +8,7 @@
 
         public override string ToString()
         {
-            return "RepoName: " + Name + ", Description: " + Description + ", Url: " + Url;
+            return $"RepoName: {Name}, Description: {Description}, Url: {Url}";
         }
     }
 }
